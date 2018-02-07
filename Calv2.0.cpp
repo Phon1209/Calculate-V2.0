@@ -810,6 +810,22 @@ class command
 			if(s[1]=='*')cmd=3;
 			if(x==NULL || y==NULL){
 				printf("Invalid Input\n");
+				pause;
+				return;
+			}
+			if(!(x->exist))
+			{
+				printf("%c is not exist\n",s[0]);
+			}
+			if(!(y->exist))
+			{
+				printf("%c is not exist\n",s[2]);
+			}
+			if(!x->exist || !y->exist)
+			{
+				printf("Please Define Matrix Again\n");
+				pause;
+				return;
 			}
 			if(cmd==1)
 			{
@@ -1168,7 +1184,7 @@ class command
 			int cm=0;
 			if(s[1]=='.')cm=1;
 			if(s[1]=='x')cm=2;
-			printf("= %d =\n",cm);
+//			printf("= %d =\n",cm);
 			if(x==NULL || y==NULL)
 			{
 				printf("A\n");
