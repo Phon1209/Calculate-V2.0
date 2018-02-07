@@ -30,6 +30,7 @@ typedef vector<ii> vii;
 typedef long long ll;
 void power()
 {
+	printf("Power\n\n");
 	printf("a^n");
 	printf("\nPlease enter a : ");
 	double base,powe;
@@ -40,7 +41,7 @@ void power()
 }
 void root()
 {
-	printf("n-th root of a");
+	printf("n-th root of a\n");
 	printf("\nPlease enter a : ");
 	double num,ro,no;
 	scanf("%lf",&num);
@@ -52,7 +53,7 @@ void root()
 }
 void log()
 {
-	printf("Log m base n");
+	printf("Log m base n\n");
 	printf("\nPlease enter m : ");
 	double m,n;
 	scanf("%lf",&m);
@@ -62,6 +63,7 @@ void log()
 }
 void seq()
 {
+	printf("Sequence\n\n");
 	int f;
 	printf("1.Sum of a+(a+n)+(a+2n)+...+(a+dn)\n");
 	printf("2.Sum of a^2+(a+n)^2+(a+2n)^2+...+(a+dn)^2\n");
@@ -117,6 +119,7 @@ void seq()
 }
 void deri()
 {
+	printf("Derivative\n\n");
 	printf("1.d(ax^n)/dx\n");
 	printf("2.d(ax^n+bx^m)/dx\n");
 	printf("3.d(ab^(c*x))/dx\n");
@@ -431,7 +434,7 @@ class command
 		Vec VA,VB,VC,VD;
 		string b;
 	public:
-		void in_post()
+		bool in_post()
 		{
 			b="";
 			mp['+']=1;
@@ -443,6 +446,7 @@ class command
 			stack<char> st;
 			printf("Insert Expression(Calulate as Int) : ");
 			cin>>a;
+			if(a=="0")return true;
 			string tmp;
 			for(int i=0;i<a.size();i++)
 			{
@@ -501,6 +505,7 @@ class command
 				b+=st.top();
 				st.pop();
 			}
+			return false;
 		}
 		ll to_ans_cal()
 		{
@@ -1097,7 +1102,7 @@ class command
 				else if(w==4)mtran();
 				else if(w==5)return;
 				else printf("Invalid Input\n");
-				pause;
+//				pause;
 			}
 		}
 		void vdef()
@@ -1254,7 +1259,7 @@ class command
 				else if(w==2)vcal();
 				else if(w==3)return;
 				else printf("Invalid Input\n");
-				pause;
+//				pause;
 			}
 		}
 		//*/
@@ -1278,48 +1283,125 @@ int main()
 	printf("Command : \n");
 	for(int i=0;i<v.size();i++)
 	{
-		printf("%d %s\n",i+1,v[i].c_str());
+		if(v[i]=="Exit")
+		{
+			printf("99 Exit\n");
+		}
+		else printf("%d %s\n",i+1,v[i].c_str());
 	}
 	printf("Choose Command : ");
 	sint(com);
 	command cm;
 	system("cls");
+	int mode;
 	switch(com)
 	{
 		case 1:
 			cm.cal();
+			mode=1;
 			break;
 		case 2:
 			cm.base_n();
+			mode=2;
 			break;
 		case 3:
 			cm.matrix(); 
+			mode=3;
 			break;
 		case 4:
 			cm.vec(); 
+			mode=4;
 			break;
 		case 5:
 			cm.fac();
+			mode=5;
 			break;
 		case 6:
 			power();
+			mode=6;
 			break;
 		case 7:
 			root();
+			mode=7;
 			break;
 		case 8:
 			log();
+			mode=8;
 			break;
 		case 9:
 			seq();
+			mode=9;
 			break;
 		case 10:
 			deri();
-		default:
+			mode=10;
+		case 99:
 			printf("Thank You\n");
 			return 0;
+		default:
+			goto start;
 	}
-	printf("Use it again? (1/0) : ");
+//	pause;
+	flag:
+	while(1){
+		pause;
+		printf("Use this Mode Again?(1/0)\n");
+		sint(answer);
+		clear;
+		if(answer==1)
+		{
+			switch(mode)
+			{
+				case 1:
+					cm.cal();
+					mode=1;
+					break;
+				case 2:
+					cm.base_n();
+					mode=2;
+					break;
+				case 3:
+					cm.matrix(); 
+					mode=3;
+					break;
+				case 4:
+					cm.vec(); 
+					mode=4;
+					break;
+				case 5:
+					cm.fac();
+					mode=5;
+					break;
+				case 6:
+					power();
+					mode=6;
+					break;
+				case 7:
+					root();
+					mode=7;
+					break;
+				case 8:
+					log();
+					mode=8;
+					break;
+				case 9:
+					seq();
+					mode=9;
+					break;
+				case 10:
+					deri();
+					mode=10;
+				case 99:
+					printf("Thank You\n");
+					return 0;
+				default:
+					goto start;
+			}
+			goto flag;
+		}
+		else break;
+	}
+	printf("Use Calculator Again? (1/0) : ");
 	char o[5];
 	scanf("%s",o);
 	if(o[0]=='1') goto start;
