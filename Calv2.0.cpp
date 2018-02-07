@@ -640,11 +640,13 @@ class command
 		}
 		void cal()
 		{
+			printf("Calculator\n\n");
 			in_post();
 			ll tmp=to_ans_cal();
 		}
 		void fac()
 		{
+			printf("Factor\n\n");
 			printf("Insert Number : ");
 			slong(tmp);
 			printf("Have %lld Factor\n",pmfac(tmp));
@@ -654,6 +656,7 @@ class command
 		///*
 		ll n_10(string num,ll base)
 		{
+			
 			string s;
 			s=num;
 			ll ret=0;
@@ -697,6 +700,7 @@ class command
 		}
 		void base_n()
 		{
+			printf("Base-N\n\n");
 			printf("What Base do you what to converse : ");
 			sint(x);
 			printf("To Base : ");
@@ -1026,6 +1030,7 @@ class command
 		void matrix()
 		{
 			//
+			
 			A.exist=0;
 			B.exist=0;
 			C.exist=0;
@@ -1033,6 +1038,7 @@ class command
 			while(1)
 			{
 				clear;
+				printf("Matrix\n\n");
 				if(A.exist)
 				{
 					printf("A : \n");
@@ -1196,6 +1202,7 @@ class command
 		void vec()
 		{
 			//
+			
 			VA.exist=0;
 			VB.exist=0;
 			VC.exist=0;
@@ -1210,6 +1217,7 @@ class command
 			while(1)
 			{
 				clear;
+				printf("Vector\n\n");
 				if(VA.exist)
 				{
 					printf("A : \n");
@@ -1399,12 +1407,7 @@ int main()
 			}
 			goto flag;
 		}
-		else break;
+		else goto start;
 	}
-	printf("Use Calculator Again? (1/0) : ");
-	char o[5];
-	scanf("%s",o);
-	if(o[0]=='1') goto start;
-	printf("Thank You");
 }
 
