@@ -441,6 +441,7 @@ class command
 			mp['^']=3;
 			string a;
 			stack<char> st;
+			printf("Insert Expression(Calulate as Int) : ");
 			cin>>a;
 			string tmp;
 			for(int i=0;i<a.size();i++)
@@ -578,6 +579,7 @@ class command
 				printf("Syntax Error\n");
 				return 0;
 			}
+			printf("Answer : ");
 			printf("%lld\n",st.top());
 			return st.top();
 		}
@@ -638,6 +640,7 @@ class command
 		}
 		void fac()
 		{
+			printf("Insert Number : ");
 			slong(tmp);
 			printf("Have %lld Factor\n",pmfac(tmp));
 			tmp=abs(tmp);
@@ -1269,7 +1272,7 @@ int main()
 	v.pb("Log m base n");
 	v.pb("Sequence Series");
 	v.pb("Derivative");
-	
+	v.pb("Exit");
 	start:
 	system("cls");
 	printf("Command : \n");
@@ -1312,8 +1315,11 @@ int main()
 			break;
 		case 10:
 			deri();
+		default:
+			printf("Thank You\n");
+			return 0;
 	}
-	printf("Continue? (1/0) : ");
+	printf("Use it again? (1/0) : ");
 	char o[5];
 	scanf("%s",o);
 	if(o[0]=='1') goto start;
