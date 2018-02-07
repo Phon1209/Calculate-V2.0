@@ -723,8 +723,11 @@ class command
 				if(s[0]<'A' || s[0]>'D')break;
 				if(s[0]=='A')
 				{
-					printf("Size = ");
-					sint2(x,y);
+					printf("Size :\n");
+					printf("Enter Row : ");
+					sint(x);
+					printf("Enter Column : ");
+					sint(y);
 					A.n=x;
 					A.m=y;
 					printf("Insert Matrix :\n");
