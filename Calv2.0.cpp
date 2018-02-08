@@ -59,7 +59,7 @@ void log()
 	scanf("%lf",&m);
 	printf("Please enter n : ");
 	scanf("%lf",&n);
-	printf("Log %.12f base %.12f is %.12f and equals to %.12f^%.12f\n",m,n,log(m)/log(n),n,log(m)/log(n));
+	printf("Log %.4f base %.12f is %.12f\nLog %.4f base %.12f equals to %.12f^%.12f\n",m,n,log(m)/log(n),m,n,n,log(m)/log(n));
 }
 void seq()
 {
@@ -123,15 +123,15 @@ void deri()
 	printf("1.d(ax^n)/dx\n");
 	printf("2.d(ax^n+bx^m)/dx\n");
 	printf("3.d(ab^(c*x))/dx\n");
-	printf("4.d(a*sin(bx))/dx\n");
+	/*printf("4.d(a*sin(bx))/dx\n");
 	printf("5.d(a*cos(bx))/dx\n");
 	printf("6.d(a*tan(bx))/dx\n");
 	printf("7.d(a*csc(bx))/dx\n");
 	printf("8.d(a*sec(bx))/dx\n");
-	printf("9.d(a*cot(bx))/dx\n");
+	printf("9.d(a*cot(bx))/dx\n");*/
 	int f;
 	double a,b,n,m,c;
-	bool ch1=true,ch2=true;
+	bool ch1=true,ch2=true,ch4=true;
 	scanf("%d",&f);
 	switch(f)
 	{
@@ -140,7 +140,7 @@ void deri()
 		scanf("%lf",&a);
 		printf("Please enter n : ");
 		scanf("%lf",&n);
-		for(;;)
+		for(;ch4;)
 		{
 			if(n==0)
 			{
@@ -164,7 +164,7 @@ void deri()
 					}
 					
 					default:
-					break;
+					ch4=false;
 				}
 			}
 			else
@@ -183,7 +183,7 @@ void deri()
 		scanf("%lf",&b);
 		printf("Please enter m : ");
 		scanf("%lf",&m);
-		for(;;)
+		for(;ch4;)
 		{
 			if(n==0 && m==0)
 			{
@@ -197,7 +197,7 @@ void deri()
 			}
 			if(n==0)
 			{
-				for(;;)
+				for(;ch4;)
 				{
 					if(b==0)
 					{
@@ -226,7 +226,7 @@ void deri()
 								continue;
 							}
 							default:
-							break;
+							ch4=false;
 						}
 					}
 					else
@@ -268,7 +268,7 @@ void deri()
 								continue;
 							}
 							default:
-							break;
+							ch4=false;
 						}
 					}
 					else
@@ -298,7 +298,7 @@ void deri()
 					}
 					
 					default:
-					break;
+					ch4=false;
 				}
 			}
 			else if(m==n)
@@ -323,7 +323,7 @@ void deri()
 					}
 					
 					default:
-					break;
+					ch4=false;
 				}
 			}
 			else if(m==0)
@@ -341,7 +341,7 @@ void deri()
 					}
 					
 					default:
-					break;
+					ch4=false;
 				}
 			}
 			else if(n==0)
@@ -359,7 +359,7 @@ void deri()
 					}
 					
 					default:
-					break;
+					ch4=false;
 				}
 			}
 		}
@@ -371,7 +371,7 @@ void deri()
 		scanf("%lf",&b);
 		printf("Please enter c : ");
 		scanf("%lf",&c);
-		for(;;)
+		for(;ch4;)
 		{
 			if(b<=0 && c!= 0)
 			{
@@ -409,7 +409,7 @@ void deri()
 				}
 				
 				default:
-				break;
+				ch4=false;
 			}
 		}
 	}
@@ -1362,6 +1362,7 @@ int main()
 		case 10:
 			deri();
 			mode=10;
+			break;
 		case 99:
 			printf("Thank You\n");
 			return 0;
@@ -1418,6 +1419,7 @@ int main()
 				case 10:
 					deri();
 					mode=10;
+					break;
 				case 99:
 					printf("Thank You\n");
 					return 0;
