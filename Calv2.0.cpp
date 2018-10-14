@@ -634,7 +634,7 @@ class command
 			for(int i=0;i<r.size();i++)
 			{
 				if(r[i]==r[i-1]) continue;
-				printf("%d ",r[i]);
+				printf("%d %d ",r[i],-r[i]);
 			}
 			endl;
 		}
@@ -649,7 +649,7 @@ class command
 			printf("Factor\n\n");
 			printf("Insert Number : ");
 			slong(tmp);
-			printf("Factor of %lld are\n",pmfac(tmp));
+			printf("Factor of %lld are\n",pmfac(tmp)*2);
 			tmp=abs(tmp);
 			alfac(tmp);
 		}
