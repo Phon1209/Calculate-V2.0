@@ -649,7 +649,7 @@ class command
 			printf("Factor\n\n");
 			printf("Insert Number : ");
 			slong(tmp);
-			printf("Have %lld Factor\n",pmfac(tmp));
+			printf("Factor of %lld are\n",pmfac(tmp));
 			tmp=abs(tmp);
 			alfac(tmp);
 		}
