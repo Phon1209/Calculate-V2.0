@@ -701,11 +701,11 @@ class command
 		void base_n()
 		{
 			printf("Base-N\n\n");
-			printf("What Base do you what to converse : ");
+			printf("What Base do you what to convert : ");
 			sint(x);
 			printf("To Base : ");
 			sint(y);
-			printf("What number do you want to converse : ");
+			printf("What number do you want to convert : ");
 			string k;
 			cin>>k;
 			ll tmp=n_10(k,x);
